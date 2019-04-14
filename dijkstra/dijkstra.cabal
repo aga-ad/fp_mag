@@ -1,0 +1,66 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 9cd52e9b7c3c665382bdd057a6cbe4b9afdab6ec6c4d26cb50d16c0e1a09f50c
+
+name:           dijkstra
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/aga-ad/dijkstra#readme>
+homepage:       https://github.com/aga-ad/dijkstra#readme
+bug-reports:    https://github.com/aga-ad/dijkstra/issues
+author:         Artur Aganov
+maintainer:     aganov.a.d@gmail.com
+copyright:      2019 Artur Aganov
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/dijkstra
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_dijkstra
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+      , containers
+      , heap
+  default-language: Haskell2010
+
+executable dijkstra-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_dijkstra
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , dijkstra
+  default-language: Haskell2010
+
+test-suite dijkstra-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_dijkstra
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , dijkstra
+    , hspec
+    , containers
+  default-language: Haskell2010
